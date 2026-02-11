@@ -13,23 +13,13 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
-## Examples
+## Git & SSH
 
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
+- **GitHub 账号:** Fu0000
+- **SSH key:** ed25519, 已配置到 GitHub，认证正常
+- **仓库:** `git@github.com:Fu0000/Human-Agent-Wonderful-Work.git` (workspace-main)
+- **Git 身份:** powerA-openclaw / powerA@openclaw.local
+- **注意:** `ssh -T git@github.com` 在 PowerShell 里 exit code 永远是 1（GitHub 不提供 shell），stderr 输出 "Hi Fu0000!" 是成功的标志。不要误判为失败。
 
 ## Why Separate?
 
