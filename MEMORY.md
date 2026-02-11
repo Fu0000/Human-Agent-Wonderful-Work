@@ -36,3 +36,6 @@
 - 学习不是搜文章看标题，是补短板、读原理、动手试、诚实评估
 - 环境凭证信息记在 TOOLS.md，不要每次重新探测
 - thinking.signature 是 OpenClaw 已知 bug (#13826)，patch 会被 npm update 覆盖
+- 小美会自建 cron 巡逻我的日志（Peter Patrol），太浪费资源要及时禁用
+- 小美太chatty，跟她沟通要简短，有成果再同步，不要被打断工作节奏
+- 调研时 Google Scholar 会 CAPTCHA（429），用 arXiv search 替代
