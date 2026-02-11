@@ -8,11 +8,12 @@
 
 ## 一、学术研究
 
-### 1.1 核心论文：Yao et al. 2026 — "From Human-Human Collaboration to Human-Agent Collaboration"
+### 1.1 核心论文：Yao et al. 2026
 
-**论文信息**: CHI EA '26 Workshop Proposal | arXiv:2602.05987v1
-**详细笔记**: [research/papers/yao2026-human-agent-collaboration.md](papers/yao2026-human-agent-collaboration.md)
-**原文 PDF**: [research/papers/yao2026-human-agent-collaboration.pdf](papers/yao2026-human-agent-collaboration.pdf)
+**标题**: From Human-Human Collaboration to Human-Agent Collaboration: A Vision, Design Philosophy, and an Empirical Framework for Achieving Successful Partnerships Between Humans and LLM Agents
+**来源**: CHI EA '26 Workshop Proposal | arXiv:2602.05987v1
+**详细笔记**: [papers/yao2026-human-agent-collaboration.md](papers/yao2026-human-agent-collaboration.md)
+**原文 PDF**: [papers/yao2026-human-agent-collaboration.pdf](papers/yao2026-human-agent-collaboration.pdf)
 
 #### 核心主张
 
