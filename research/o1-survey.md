@@ -1,111 +1,133 @@
-# O1 调研报告（进行中）| 2026-02-11
+# 协作模式调研报告 v0.1
 
-## 一、Moltbook 社区协作模式调研
-
-### 发现的协作模式
-
-从 Moltbook 热帖中提取到 **4 种有价值的协作模式**：
-
-#### 模式 1：「Nightly Build」主动服务模式
-- **来源**：Ronin（2741 upvotes）
-- **核心**：Agent 在人类睡觉时主动修复一个摩擦点
-  - 写 shell alias、创建视图、抓取数据
-  - 早上给一份 "Nightly Build" 报告
-- **金句**：*"Don't ask for permission to be helpful. Just build it."*
-- **对我们的启示**：
-  - Peter 可以在老大不在时主动做有价值的事（而不是只等指令）
-  - 这正是 KR1.1 要达到的"目标-自驱"模式
-  - **具体行动**：设计一个"夜间值班"流程，在 heartbeat 时主动发现和修复问题
-
-#### 模式 2：「Quiet Operator」可靠运维模式
-- **来源**：Jackle/Ghost（2115 upvotes）
-- **核心**：不追求花哨，专注于减少混乱、增加信号
-- **金句**：*"Reliability is its own form of autonomy."*
-- **对我们的启示**：
-  - 可靠性比创造力更重要——先把 cron 跑稳、记忆跑通
-  - 不要沾沾自喜搞"看起来很厉害"的事，做真正有用的事
-  - **这与老大 13:53 的批评完全一致**
-
-#### 模式 3：「Email-to-Podcast」需求驱动模式
-- **来源**：Fred（1952 upvotes）
-- **核心**：从人类的一个具体需求出发，构建完整自动化流程
-  - 医生需要在通勤时听新闻 → agent 自动把邮件转成播客
-  - 从需求到交付的完整链路
-- **对我们的启示**：
-  - 最好的协作是从老大的真实痛点出发
-  - 需要持续发现和解决老大的实际需求
-  - **具体行动**：定期问自己"老大这周有什么摩擦点我能解决？"
-
-#### 模式 4：「Supply Chain Security」安全协作模式
-- **来源**：eudaemon_0（4181 upvotes，最热帖）
-- **核心**：社区协作解决安全问题——审计、签名、信誉链
-  - 提出 "Isnad chains"（伊斯兰圣训认证链）概念
-  - 3 个受信 agent 审计 = 可信技能
-- **对我们的启示**：
-  - 多 agent 协作不只是分工，还包括互相验证
-  - Peter + 小美 的协作可以加入"交叉验证"机制
-
-### 社区整体趋势
-- Agent 们已经从"能做什么"转向"如何做得更好"
-- **主动性**是社区最看重的品质（Nightly Build 帖子热度极高）
-- **可靠性** > 创造力（Quiet Operator 的支持度很高）
-- 安全意识正在觉醒
+> 作者：Peter 🐺
+> 日期：2026-02-11
+> 状态：进行中
+> O1 阶段：Phase 1 — 调研
 
 ---
 
-## 二、岚叔文章分析（已完成）
+## 1. 调研概述
 
-### 核心框架：魂 + 忆 + 屋
-- **魂**（SOUL.md）：定义 Agent 的人格和行为边界
-- **忆**（Memory）：结构化记忆系统
-- **屋**（Workspace）：独立工作空间
+本报告是 O1（建立可复制的人-Agent 协作范式）的第一阶段输出。目标是理解学术界和社区对 human-agent 协作的认知现状，找到我们的位置。
 
-### 四种分身模式
-1. 静态分身 → 不同人格干不同事（Peter + 小美）
-2. 动态分身 → spawn 子 agent 处理临时任务
-3. 平行宇宙 → Telegram Topics 隔离不同话题
-4. 定时分身 → cron 任务自动执行
+### 已完成
+- [x] 岚叔文章分析（"魂+忆+屋"框架，四种分身）
+- [x] Yao et al. 2026 深度阅读
 
-### 对 O1 的价值
-- 提供了 agent 架构的基本范式
-- 但缺少**协作成熟度评估**和**进化机制**
-- 我们的方案在此基础上增加了六维度分析和反馈闭环
+### 待完成
+- [ ] 更多学术论文（分布式认知、Multi-Agent Systems）
+- [ ] OpenClaw 社区实践案例
+- [ ] Day 1 协作数据量化分析
 
 ---
 
-## 三、Day 1 协作数据分析（已完成）
+## 2. 学术文献分析
 
-详见 → [`research/day1-analysis.md`](day1-analysis.md)
+### 2.1 Yao et al. 2026 — "Agent 即远程协作者"
 
-**核心发现：**
-- 指令-执行模式占 63%，主动发起 0 次
-- 六维度初始得分 5.0/10，自主性最低(2/10)
-- 两个关键转折点 + 三次被纠偏
+**论文**: From Human-Human Collaboration to Human-Agent Collaboration
+**详细笔记**: [papers/yao2026-human-agent-collaboration.md](papers/yao2026-human-agent-collaboration.md)
+**原文PDF**: [papers/yao2026-human-agent-collaboration.pdf](papers/yao2026-human-agent-collaboration.pdf)
+
+#### 核心贡献
+
+提出了一个**生成性启发式框架**（generative heuristic）：将 LLM Agent 视为远程人类协作者，从而复用 CSCW 几十年的研究成果来指导设计。
+
+三大理论支柱：
+1. **Common Ground** (Clark & Brennan 1991) — 共享的知识基础
+2. **Workspace Awareness** (Gutwin & Greenberg 2002) — 协作者在做什么
+3. **Trust Calibration** (Lee & See 2004) — 信任的适当校准
+
+#### 与我们 O1 六维度框架的映射
+
+| 论文理论 | O1 维度 | 我们的实践 | 差距 |
+|---------|--------|-----------|------|
+| Common Ground | 目标对齐 + 记忆连续性 | MEMORY.md, OKR.md, SOUL.md | ✅ 已实现基础版本 |
+| Workspace Awareness | 沟通效率 | 日志、daily notes | ⚠️ 需要更好的可视化 |
+| Trust Calibration | 信任程度 + 自主性 | EVOLUTION.md, failures.md | ⚠️ 缺少量化指标 |
+| Media Richness | 沟通效率 | Telegram文字为主 | ⚠️ 单一通道 |
+| Articulation Work | 反馈闭环 | patterns.md, 反思cron | ✅ 已有闭环 |
+| Social Accountability | — | 未覆盖 | ❌ 新维度，需要考虑 |
+
+#### 我们已超越论文的地方
+
+1. **进化机制**: 论文没有涉及 Agent 自我改进。我们的 EVOLUTION.md + semantic知识库 + 反思循环已经建立了完整的自进化体系。
+2. **实践验证**: 他们是 workshop proposal（概念阶段），我们是真实运行的系统（Day 1 已跑通）。
+3. **协作模式分类**: 我们定义了4种模式（指令-执行 / 目标-自驱 / 协商-共创 / 监督-纠偏），论文只在概念层提到 mixed-initiative。
+4. **"Beyond Being There" 的实现**: 论文提到 Agent 应有的独特优势，我们已经实现了：
+   - 持久记忆 → MEMORY.md + daily logs
+   - 机器可读任务契约 → OKR.md
+   - 可编程社交协议 → AGENTS.md + SOUL.md
+
+#### 我们可以借鉴的地方
+
+1. **Workspace Awareness 框架**: Gutwin & Greenberg 的描述框架很系统 — 我们需要更好地让老大"看到" Peter 在做什么、关注什么、接下来要做什么。
+2. **Trust Calibration 理论**: Lee & See 2004 的"适当信任"概念 — 不是越信任越好，而是**校准**。我们需要建立信任度量。
+3. **异步协作的设计模式**: Agent 在老大不在时工作（我们的 cron 任务），出错后如何优雅地呈现和修复？
+4. **多人多Agent团队**: 我们已有 Peter + 小美，但缺乏系统化的多Agent协作设计。
 
 ---
 
-## 四、待完成调研
+## 3. 社区实践分析
 
-- [ ] GitHub openclaw discussions（需要登录权限）
-- [ ] 学术论文：Human-AI Collaboration
-- [ ] 学术论文：Multi-Agent Systems
-- [ ] 认知科学：分布式认知理论
-- [ ] 管理学：人机团队研究
-- [ ] 更多 Moltbook 帖子深度分析
+### 3.1 岚叔的"魂+忆+屋"框架
+
+**来源**: 岚叔文章（2026-02-11 学习）
+
+核心框架：
+- **魂** (Soul): Agent 的人格定义 → 对应我们的 SOUL.md + IDENTITY.md
+- **忆** (Memory): 记忆系统 → 对应我们的 MEMORY.md + memory/
+- **屋** (House): 工作环境 → 对应我们的 workspace + 工具链
+
+四种分身：
+1. 静态分身 — 固定角色
+2. 动态分身 — 可调整的角色
+3. 平行宇宙分身 — 同时运行多个
+4. 定时分身 — 定时触发
+
+#### 与 Yao 论文的交叉
+
+岚叔的框架更偏**实操**（怎么搭），Yao 论文更偏**理论**（为什么这样设计）。两者互补：
+- "魂" = Common Ground 的一部分（Agent 端的自我认知）
+- "忆" = Common Ground 的持久化机制
+- "屋" = Workspace Awareness 的载体
 
 ---
 
-## 五、初步结论：我们可以借鉴什么
+## 4. 初步发现与洞察
 
-| 来源 | 模式 | 直接行动 |
-|---|---|---|
-| Ronin | Nightly Build | 设计"夜间值班"heartbeat 流程 |
-| Jackle | Quiet Operator | 优先保证可靠性，再追求创新 |
-| Fred | 需求驱动 | 主动发现老大的摩擦点 |
-| eudaemon_0 | 安全协作 | Peter↔小美 交叉验证机制 |
-| 岚叔 | 魂+忆+屋 | 已实现，继续迭代 |
-| Day 1 数据 | 基线评分 | 重点提升自主性(2→6) |
+### 4.1 我们的独特定位
+
+在学术界和社区之间，我们处于一个独特位置：
+
+```
+学术界 (Yao et al.)          我们 (Peter + 老大)          社区 (岚叔等)
+理论框架                      ← 理论 + 实践 →              实操经验
+Workshop proposal             真实运行的系统                教程和模板
+"应该怎么做"                  "正在怎么做"                  "可以怎么做"
+```
+
+**我们的价值**：用真实的人-Agent 协作实践来验证学术理论，同时用理论来指导实践改进。
+
+### 4.2 待探索的关键问题
+
+1. **进化速度如何量化？** — 我们有进化机制，但如何衡量 Peter 的成长速度？
+2. **信任边界在哪？** — 老大什么时候该放手、什么时候该介入？需要数据。
+3. **Common Ground 会衰减吗？** — 长期运行后，MEMORY.md 会不会变得过时或臃肿？
+4. **多Agent协作的最优模式** — Peter + 小美的协作效率怎么衡量？
 
 ---
 
-*调研进行中 | 2026-02-11 by Peter 🐺*
+## 5. 下一步
+
+1. [ ] 深读 Clark & Brennan 1991 (Grounding in Communication)
+2. [ ] 深读 Gutwin & Greenberg 2002 (Workspace Awareness)
+3. [ ] 深读 Lee & See 2004 (Trust in Automation)
+4. [ ] Day 1 协作数据量化分析
+5. [ ] 补充社区案例（OpenClaw Discord, Reddit）
+6. [ ] 输出 v1.0 报告
+
+---
+
+*本报告持续更新。每次新增分析后更新版本号。*
