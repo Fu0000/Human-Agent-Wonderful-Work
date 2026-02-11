@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "description": "记忆之间的关联图。当一个事件触发时，可以快速找到相关记忆。",
+  "connections": [
+    {
+      "from": "curl.exe编码问题",
+      "to": "cron任务修复",
+      "relation": "caused_fix",
+      "date": "2026-02-11"
+    },
+    {
+      "from": "agentToAgent未开启",
+      "to": "跨agent通信失败",
+      "relation": "root_cause",
+      "date": "2026-02-11"
+    },
+    {
+      "from": "agentToAgent未开启",
+      "to": "subagents.allowAgents配置",
+      "relation": "easily_confused_with",
+      "note": "spawn用allowAgents，send用agentToAgent，是两套独立权限"
+    },
+    {
+      "from": "岚叔文章",
+      "to": "四种分身模式",
+      "relation": "learned_from",
+      "date": "2026-02-11"
+    },
+    {
+      "from": "四种分身模式",
+      "to": "进化体系设计",
+      "relation": "inspired",
+      "date": "2026-02-11"
+    }
+  ]
+}

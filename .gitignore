@@ -1,0 +1,12 @@
+# Temp files
+temp-*.ps1
+temp-*.json
+*.tmp
+
+# Backups (keep in local only)
+backup-*/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
