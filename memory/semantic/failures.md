@@ -31,3 +31,10 @@
 - **Error:** `ssh -T git@github.com` exit code 1，PowerShell 把 stderr 当错误
 - **Root Cause:** GitHub SSH 不提供 shell access，永远返回 exit code 1。成功标志是 stderr 里的 "Hi {username}!"
 - **教训:** 环境凭证信息记在 TOOLS.md，不要重复探测已知可用的配置。先读 TOOLS.md 再动手。
+
+## F006: 工具调用失败后未自动重试 (2026-02-11 21:08-23:11)
+- **Error:** write/exec 返回 "synthetic error result for transcript repair"，任务中断
+- **Root Cause:** 工具调用偶发失败（可能是 session 修复机制），但我没有立即重试
+- **Impact:** 老大等了近2小时来催问，严重影响信任
+- **Fix:** 工具调用失败后应立即重试同一操作，最多重试2次。如果连续失败，主动告知老大。
+- **教训:** 不要默默失败。要么重试成功，要么立刻汇报。沉默 = 最差的失败模式。
