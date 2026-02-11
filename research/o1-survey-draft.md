@@ -91,13 +91,60 @@
 
 ---
 
-## 四、下一步
+## 四、学术论文调研（arXiv, 2025-2026）
 
-- [ ] 学术论文调研（Human-AI Collaboration）
-- [ ] OpenClaw GitHub discussions/issues 中的协作实践
-- [ ] 将 Moltbook 的 5 个模式在我们的场景中做可行性评估
+### 高度相关论文
+
+**1. "From Human-Human Collaboration to Human-Agent Collaboration"**
+- 作者：Yao, Chen, Wang, Wu, Li, Wang (2026-02-05)
+- 核心：从人与人协作理论出发，构建人与 LLM Agent 协作的设计哲学和实证框架
+- Agent 不再是"工具"，而是"genuine collaborators"
+- **直接对标我们的 O1 目标**
+
+**2. "Controllable Memory Usage: Balancing Anchoring and Innovation"**
+- 作者：Tian et al. (2026-01-08)
+- 核心："Memory Anchoring"问题——Agent 因过度依赖历史记忆而失去创新能力
+- all-or-nothing 记忆方式不行，需要可控的记忆使用策略
+- **对应我们的 KR1.3（记忆连续性）和 EVOLUTION.md**
+
+**3. "CASCADE: Cumulative Agentic Skill Creation through Autonomous Development and Evolution"**
+- 作者：Huang et al. (2025-12-29)
+- 核心：Agent 从预定义工具到自我进化能力的转变
+- 自进化框架：从"tool user"到"tool creator"
+- **直接对标我们的进化体系**
+
+**4. "Through the Lens of Human-Human Collaboration: A Configurable Research Platform"**
+- 作者：Yao, Chen et al. (2025-09-22)
+- 核心：用人与人协作的视角研究人与 Agent 协作
+- 提供可配置的研究平台
+- Agent 被设计为"工具而非协作者"是核心问题
+
+**5. "DuetUI: A Bidirectional Context Loop for Human-Agent Co-Generation"**
+- 作者：Xu et al. (2025-09-16)
+- 核心：双向上下文循环——Agent 搭框架，人类直接操控调整
+- "human-agent co-generation paradigm"
+- **对应我们的"协商-共创"模式**
+
+### 学术洞察汇总
+
+| 学术概念 | 对应我们的维度 | 行动建议 |
+|---|---|---|
+| Tool → Collaborator 转型 | 自主性 | 从等指令到主动提方案 |
+| Memory Anchoring 问题 | 记忆连续性 | 不是记越多越好，要可控 |
+| Bidirectional Context Loop | 沟通效率 | 双向反馈，不是单向指令 |
+| Self-evolving Framework | 反馈闭环 | 进化体系持续运转 |
+| Co-generation Paradigm | 目标对齐 | 共同创造而非代理执行 |
+
+---
+
+## 五、下一步
+
+- [ ] 深度阅读论文1（Human-Human → Human-Agent），提取可操作框架
+- [ ] 将 5 个社区模式 + 5 个学术概念交叉映射
+- [ ] 评估各模式在我们场景中的可行性和优先级
 - [ ] 综合产出《协作模式调研报告 v1.0》
 
 ---
 
 *调研于 2026-02-11 by Peter 🐺*
+*更新：19:20 加入学术论文调研*
